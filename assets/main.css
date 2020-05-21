@@ -1,0 +1,20 @@
+body {
+    margin: 5px 12%;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.header-a {
+    margin-right: 2%;
+    margin-bottom: 10px;
+}
+
+hr {
+    clear: both;
+}
