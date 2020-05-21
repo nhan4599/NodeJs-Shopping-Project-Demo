@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/assets/main.css" type="text/css">
 </head>
-
 <body>
     <div>
         <a class="pull-left header-a" href="#">HOME</a>
-        <a class="pull-left header-a" href="#">SMARTPHONE</a>
-        <a class="pull-left header-a" href="#">LAPTOP</a>
-        <a class="pull-left header-a" href="#">ACCESSORIES</a>
         <form class="pull-right">
             <input type="text" name="keyword" placeholder="search products">
             <input type="submit" value="search">
@@ -21,15 +16,19 @@
     </div>
     <hr>
     <div>
-        <% if (!session.user) { %>
         <a href="/account/login" class="pull-left header-a">Login</a>
         <a href="/account/signup" class="pull-left header-a">Sign-up</a>
-        <% } else { %>
-        <a href="#" class="pull-left header-a">welcome <%= session.user %>!</a>
-        <% } %>
     </div>
     <hr>
-    <div></div>
+    <div class="center">
+        <h1>CUSTOMER LOGIN</h1>
+        <form action="/account/login" method="POST">
+            Username <input type="text" name="username" style="margin-bottom: 5px;">
+            <br>
+            Password <input type="password" name="password" style="margin-bottom: 5px;">
+            <br>
+            <input type="submit" value="LOGIN">
+        </form>
+    </div>
 </body>
-
 </html>

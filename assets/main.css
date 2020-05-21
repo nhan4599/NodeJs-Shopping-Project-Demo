@@ -18,3 +18,7 @@ body {
 hr {
     clear: both;
 }
+
+.center {
+    text-align: center;
+}

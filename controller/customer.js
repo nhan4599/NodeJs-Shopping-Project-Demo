@@ -6,4 +6,6 @@ router.get('/', (req, res) => {
     res.render('home.ejs');
 });
 
+router.use('/account/', require('./account.js'));
+
 module.exports = router;
