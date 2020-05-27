@@ -1,3 +1,4 @@
+/*jshint esversion: 8 */
 var express = require('express');
 var constant = require('../constant.js');
 var db = require('../database.js');

@@ -1,3 +1,4 @@
+/*jshint esversion: 8 */
 var mongoClient = require('mongodb').MongoClient;
 var constant = require('./constant.js');
 var crypto = require('crypto');
