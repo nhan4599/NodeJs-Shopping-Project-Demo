@@ -17,3 +17,4 @@ app.get('/assets/:fileName', (req, res) => {
 });
 
 app.use('/', require('./controller/customer.js'));
+app.use('/admin', require('./controller/admin.js'));

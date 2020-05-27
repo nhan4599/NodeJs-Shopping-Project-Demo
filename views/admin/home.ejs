@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/main.css" type="text/css">
+    <link rel="icon" href="../../assets/favicon.png">
+</head>
+
+<body style="margin: 5px 25%;">
+    <div>
+        <form action="/admin/logout" method="POST" id="frmLogOut" style="display: none;">
+        </form>
+        <a href="#" class="pull-left header-a">HOME</a>
+        <a href="category" class="pull-left header-a">CATEGORY</a>
+        <a href="#" class="pull-left header-a">PRODUCT</a>
+        <a href="#" class="pull-left header-a">ORDER</a>
+        <a href="#" class="pull-left header-a">CUSTOMER</a>
+        <a href="#" class="pull-right header-a"
+            onclick="javascript:document.getElementById('frmLogOut').submit();">Logout</a>
+        <span class="pull-right header-a">hello <b><%= session.admin.user %></b> | </span>
+    </div>
+    <hr>
+    <div id="animation" style="width: 85%; margin: auto;"></div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.10/lottie.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            var element = document.getElementById('animation');
+            lottie.loadAnimation({
+                container: element, // the dom element that will contain the animation
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: '../../assets/hello.json'
+            });
+        });
+    </script>
+</body>
+</html>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/assets/main.css" type="text/css">
+    <link rel="icon" href="../assets/favicon.png">
 </head>
 
 <body>
@@ -25,8 +26,10 @@
         <a href="/account/login" class="pull-left header-a">Login</a>
         <a href="/account/signup" class="pull-left header-a">Sign-up</a>
         <% } else { %>
-        <a href="#" class="pull-left header-a">welcome <%= session.user %>!</a>
+        <p class="pull-left header-a inline">welcome <%= session.user %>!</p>
+        <a class="pull-left header-a">Log off</a>
         <% } %>
+        <a class="pull-right header-a">My Cart</a>
     </div>
     <hr>
     <div></div>

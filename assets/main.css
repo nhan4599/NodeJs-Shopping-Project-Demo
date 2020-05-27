@@ -15,10 +15,41 @@ body {
     margin-bottom: 10px;
 }
 
+.pull-right.header-a {
+    margin-right: 0px;
+    margin-left: 2%;
+}
+
+p.header-a {
+    margin-top: 0px;
+}
+
 hr {
     clear: both;
+    border-top: 1px solid black;
 }
 
 .center {
+    width: fit-content;
+    margin: auto;
+}
+
+.inline {
+    display: inline-block;
+}
+
+input[type=submit] {
+    cursor: pointer;
+}
+
+/*admin layout section*/
+
+.form-center {
+    height: fit-content;
+    width: fit-content;
+    margin: 25% auto;
+}
+
+.table-col-name {
     text-align: center;
 }
