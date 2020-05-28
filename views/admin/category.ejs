@@ -21,12 +21,13 @@
         <form action="/admin/logout" method="POST" id="frmLogOut" style="display: none;">
         </form>
         <a href="#" class="pull-left header-a">HOME</a>
-        <a href="#" class="pull-left header-a">CATEGORY</a>
+        <a href="/admin/category" class="pull-left header-a">CATEGORY</a>
         <a href="#" class="pull-left header-a">PRODUCT</a>
         <a href="#" class="pull-left header-a">ORDER</a>
         <a href="#" class="pull-left header-a">CUSTOMER</a>
         <a href="#" class="pull-right header-a"
-            onclick="javascript:document.getElementById('frmLogOut').submit();">Logout</a>
+            onclick="javascript:document.getElementById('frmLogOut').submit();">Logout
+        </a>
         <span class="pull-right header-a">hello <b><%= session.admin.user %></b> | </span>
     </div>
     <hr>
@@ -52,23 +53,21 @@
                 <tr>
                     <th></th>
                     <th></th>
-                    <th></th>
                 </tr>
                 <tr>
                     <td>ID</td>
-                    <td colspan="2"><input type="text" name="cateId" readonly></td>
+                    <td><input type="text" name="cateId" readonly></td>
                 </tr>
                 <tr>
                     <td>Name</td>
-                    <td colspan="2"><input type="text" name="cateName"></td>
+                    <td><input type="text" name="cateName"></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="submit" value="Add New"></td>
-                    <td><input type="submit" value="Update"></td>
+                    <td><input type="submit" value="Add or Update"></td>
                 </tr>
                 <% if (hasOwnProperty('err')) { %>
-                    <span style="color: red;"><%= err %></span>
+                <span style="color: red;"><%= err %></span>
                 <% } %>
             </table>
         </form>
@@ -76,8 +75,9 @@
     <script src="../../assets/jquery-3.5.1.js"></script>
     <script>
         $(document).ready(function () {
-            $('input[type=text]').css({ width: '100%',
-                'box-sizing': 'border-box' 
+            $('input[type=text]').css({
+                'width': '100%',
+                'box-sizing': 'border-box'
             });
             var row = $('.o-e-colored-table').children().children('tr');
             row.each((index, ele) => {

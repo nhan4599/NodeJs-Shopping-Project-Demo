@@ -6,11 +6,11 @@ var crypto = require('crypto');
 
 var conn = new mongoClient(constant.connectionString);
 
-async function IsUniqueCateID(conn, id) {
+async function IsExistedCateID(conn, id) {
     try {
         var query = { _id: new objectId(id) };
         var result = await conn.db(constant.dbName).collection('categories').findOne(query);
-        return result == null;
+        return result != null;
     } catch (err) {
         return false;
     }
@@ -41,19 +41,19 @@ module.exports.GetCategoryList = async function () {
 module.exports.UpdateCategory = async function (id, name) {
     try {
         await conn.connect({ connectWithNoPrimary: true });
-        var isUnique = await IsUniqueCateID(conn, id);
-        if (isUnique || id === '') {
+        var isExisted = await IsExistedCateID(conn, id);
+        var coll = conn.db(constant.dbName).collection('categories');
+        if (!isExisted || id === '') {
             var query = { name: name };
-            var addResult = await conn.db(constant.dbName).collection('categories').insertOne(query);
+            var addResult = await coll.insertOne(query);
             return addResult.insertedCount;
         } else {
             var filter = { _id: new objectId(id)};
             var newData = { $set: { name: name } };
-            var updateResult = await conn.db(constant.dbName).collection('categories').updateOne(filter, newData);
+            var updateResult = await coll.updateOne(filter, newData);
             return updateResult.result.nModified;
         }
     } catch (err) {
-        console.log(err);
         return -1;
     }
 };
